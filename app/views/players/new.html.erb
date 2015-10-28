@@ -1,0 +1,18 @@
+  <%= form_for @player do |f| %>
+  <%= f.label :name, 'Full Name:' %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :position %>
+  <%= f.text_field :position %>
+  <br>
+  <br>
+  <%= f.label :team_id %>
+  <br>
+  <%#= f.number_field :team_id %>
+  <%= f.select :team_id, Team.all.map { |c| [c.name, c.id] } %>
+
+  <br>
+  <br>
+  <%= f.submit 'Add Player Info!!' %>
+<% end %>
